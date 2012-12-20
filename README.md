@@ -32,7 +32,7 @@ Unfortunately, this code of the "Parsing XML data with NSXMLParser" site suffers
 
 ### Reuse
 
-Personally, on top of all of those issues, I find it frustrating that the `XMLParser` class on that web site (renamed `UsersParser` here) was coded for only the `User` XML data. So, I have written a variation of it, `XmlArrayParser`, which captures much of the functionality of the original parser code, but can work with most XML files of this structure (i.e. an array of items, for which each item has either a series of attributes or a series of sub-elements that are strings). In short, while this `XmlArrayParser` has limitations, it does everything that the `XmlParser` was doing, plus a little more, and does so in a generic fashion, so you can get some reuse from it.
+Personally, on top of all of those issues, I find it frustrating that the `XMLParser` class on that web site (renamed `UsersParser` here) was coded for only the `User` XML data. So, I have written a variation of it, `XmlArrayParser`, which captures much of the functionality of the original parser code, but can work with most XML files of this structure (i.e. an array of items, for which each item has either a series of attributes or a series of sub-elements that are strings). In short, while this `XmlArrayParser` has limitations, it does everything that the `XmlParser` was doing, plus a little more, and does so in a more flexible fashion, so you can get some reuse from it.
 
 ## Classes, Protocols, and Categories
 
@@ -50,9 +50,9 @@ The classes in this project include:
 
 - `UsersParser` - This was called `XmlParser` in the code listed in "Parsing XML data with NSXMLParser". This is not really the parser itself, but rather the delegate object that will be passed to the parser, which will receive the `NSXmlParserDelegate` call back methods. It reads the XML and stores the results as an array of `User` objects
 
-### Generic XML Parser
+### Flexible XML Parser
 
-- `XmlArrayParser` - This class is also a very simple parser, but it encapsulates `NSXMLParser` so the caller doesn't have to deal with that at all. It also stores the results in an array of dictionary entries, so it doesn't need to know the structure of the data. All it needs is (a) what element name designates a new row of data (`user` in our example); (b) what attributes do we want to capture for this element (in our revised example below, this would be `userId`); and (c) what sub-elements doe we want to capture values for (e.g. `userName`, `firstName` and `lastName`.
+- `XmlArrayParser` - This class is also a very simple parser, but it encapsulates `NSXMLParser` so the caller doesn't have to deal with two objects at all. It also stores the results in an array of dictionary entries, so it doesn't need to know the structure of the data. All it needs is (a) what element name designates a new row of data (`user` in our example); (b) what attributes do we want to capture for this element (in our revised example below, this would be `userId`); and (c) what sub-elements doe we want to capture values for (e.g. `userName`, `firstName` and `lastName`).
 
 ## XML Data
 
