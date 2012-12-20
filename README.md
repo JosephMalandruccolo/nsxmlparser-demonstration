@@ -22,7 +22,7 @@ Unfortunately, this code of the "Parsing XML data with NSXMLParser" site suffers
 
 - the code had properties that were really implementation-specific declared in the public interface of the .h; these have been moved out of the public interface and in to the private class extension in the .m;
 
-- the `XMLParser` was designated as conforming to `NSXMLParserDelegate`
+- the `XMLParser` wasn't designated as conforming to `NSXMLParserDelegate`
 
 - I have renamed `initXmlParser` to `init` and have employed a more conventional implementation for it;
 
