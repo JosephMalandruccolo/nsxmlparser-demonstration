@@ -18,6 +18,12 @@
 		8333C79C1682DC8E00371755 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8333C79B1682DC8E00371755 /* Default-568h@2x.png */; };
 		8333C79F1682DC8E00371755 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8333C79D1682DC8E00371755 /* MainStoryboard.storyboard */; };
 		8333C7A21682DC8E00371755 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8333C7A11682DC8E00371755 /* ViewController.m */; };
+		8333C7AA1682DCBB00371755 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 8333C7A91682DCBB00371755 /* User.m */; };
+		8333C7AD1682DD1E00371755 /* UsersParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8333C7AC1682DD1E00371755 /* UsersParser.m */; };
+		8333C7B01682DEB100371755 /* users.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8333C7AF1682DEB100371755 /* users.xml */; };
+		8333C7B31682E12000371755 /* XmlArrayParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8333C7B21682E12000371755 /* XmlArrayParser.m */; };
+		8333C7B81682F66000371755 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 8333C7B61682F66000371755 /* LICENSE */; };
+		8333C7B91682F66000371755 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8333C7B71682F66000371755 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +43,15 @@
 		8333C79E1682DC8E00371755 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		8333C7A01682DC8E00371755 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		8333C7A11682DC8E00371755 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		8333C7A81682DCBB00371755 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		8333C7A91682DCBB00371755 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		8333C7AB1682DD1E00371755 /* UsersParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersParser.h; sourceTree = "<group>"; };
+		8333C7AC1682DD1E00371755 /* UsersParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersParser.m; sourceTree = "<group>"; };
+		8333C7AF1682DEB100371755 /* users.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = users.xml; sourceTree = "<group>"; };
+		8333C7B11682E12000371755 /* XmlArrayParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XmlArrayParser.h; sourceTree = "<group>"; };
+		8333C7B21682E12000371755 /* XmlArrayParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XmlArrayParser.m; sourceTree = "<group>"; };
+		8333C7B61682F66000371755 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		8333C7B71682F66000371755 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +71,8 @@
 		8333C7761682DC8D00371755 = {
 			isa = PBXGroup;
 			children = (
+				8333C7B71682F66000371755 /* README.md */,
+				8333C7B61682F66000371755 /* LICENSE */,
 				8333C78B1682DC8E00371755 /* NSXMLParser ARC Demonstration */,
 				8333C7841682DC8D00371755 /* Frameworks */,
 				8333C7821682DC8D00371755 /* Products */,
@@ -83,11 +100,9 @@
 		8333C78B1682DC8E00371755 /* NSXMLParser ARC Demonstration */ = {
 			isa = PBXGroup;
 			children = (
-				8333C7941682DC8E00371755 /* AppDelegate.h */,
-				8333C7951682DC8E00371755 /* AppDelegate.m */,
-				8333C79D1682DC8E00371755 /* MainStoryboard.storyboard */,
-				8333C7A01682DC8E00371755 /* ViewController.h */,
-				8333C7A11682DC8E00371755 /* ViewController.m */,
+				8333C7B51682EAE700371755 /* Sample Project */,
+				8333C7B41682EAAF00371755 /* Generic Parser */,
+				8333C7AE1682DD9800371755 /* User Parser */,
 				8333C78C1682DC8E00371755 /* Supporting Files */,
 			);
 			path = "NSXMLParser ARC Demonstration";
@@ -105,6 +120,39 @@
 				8333C79B1682DC8E00371755 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8333C7AE1682DD9800371755 /* User Parser */ = {
+			isa = PBXGroup;
+			children = (
+				8333C7A81682DCBB00371755 /* User.h */,
+				8333C7A91682DCBB00371755 /* User.m */,
+				8333C7AB1682DD1E00371755 /* UsersParser.h */,
+				8333C7AC1682DD1E00371755 /* UsersParser.m */,
+			);
+			name = "User Parser";
+			sourceTree = "<group>";
+		};
+		8333C7B41682EAAF00371755 /* Generic Parser */ = {
+			isa = PBXGroup;
+			children = (
+				8333C7B11682E12000371755 /* XmlArrayParser.h */,
+				8333C7B21682E12000371755 /* XmlArrayParser.m */,
+			);
+			name = "Generic Parser";
+			sourceTree = "<group>";
+		};
+		8333C7B51682EAE700371755 /* Sample Project */ = {
+			isa = PBXGroup;
+			children = (
+				8333C7941682DC8E00371755 /* AppDelegate.h */,
+				8333C7951682DC8E00371755 /* AppDelegate.m */,
+				8333C79D1682DC8E00371755 /* MainStoryboard.storyboard */,
+				8333C7A01682DC8E00371755 /* ViewController.h */,
+				8333C7A11682DC8E00371755 /* ViewController.m */,
+				8333C7AF1682DEB100371755 /* users.xml */,
+			);
+			name = "Sample Project";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +211,9 @@
 				8333C79A1682DC8E00371755 /* Default@2x.png in Resources */,
 				8333C79C1682DC8E00371755 /* Default-568h@2x.png in Resources */,
 				8333C79F1682DC8E00371755 /* MainStoryboard.storyboard in Resources */,
+				8333C7B01682DEB100371755 /* users.xml in Resources */,
+				8333C7B81682F66000371755 /* LICENSE in Resources */,
+				8333C7B91682F66000371755 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +227,9 @@
 				8333C7921682DC8E00371755 /* main.m in Sources */,
 				8333C7961682DC8E00371755 /* AppDelegate.m in Sources */,
 				8333C7A21682DC8E00371755 /* ViewController.m in Sources */,
+				8333C7AA1682DCBB00371755 /* User.m in Sources */,
+				8333C7AD1682DD1E00371755 /* UsersParser.m in Sources */,
+				8333C7B31682E12000371755 /* XmlArrayParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,7 +277,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -244,7 +298,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

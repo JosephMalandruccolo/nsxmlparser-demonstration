@@ -1,8 +1,16 @@
 //
-//  ViewController.h
+//  UserParser.h
 //  NSXMLParser ARC Demonstration
 //
-//  Created by Robert Ryan on 12/20/12.
+//  This code was taken from "Parsing XML data with NSXMLParser" at
+//  http://wiki.cs.unh.edu/wiki/index.php/Parsing_XML_data_with_NSXMLParser
+//
+//  I have attempted here to preserve the basic structure of that code
+//  but have made numerous modifications as outlined in the README.md document.
+//
+//  --
+//
+//  Modified by Robert Ryan on 12/20/12.
 //  Copyright (c) 2012 Robert M. Ryan. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,13 +31,10 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
-@interface ViewController : UIViewController
+@interface UsersParser : NSObject <NSXMLParserDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextView *textView;
-
-- (IBAction)pressedUserParser:(id)sender;
-- (IBAction)pressedGenericParser:(id)sender;
+@property (nonatomic, strong) NSMutableArray *users;
 
 @end

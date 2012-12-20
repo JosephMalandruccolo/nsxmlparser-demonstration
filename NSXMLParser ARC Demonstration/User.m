@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  User.m
 //  NSXMLParser ARC Demonstration
 //
 //  Created by Robert Ryan on 12/20/12.
@@ -23,13 +23,24 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-#import <UIKit/UIKit.h>
+#import "User.h"
 
-@interface ViewController : UIViewController
+@implementation User
 
-@property (weak, nonatomic) IBOutlet UITextView *textView;
+// this isn't needed, but it's useful for NSLogging the user
 
-- (IBAction)pressedUserParser:(id)sender;
-- (IBAction)pressedGenericParser:(id)sender;
+- (NSString *)description
+{
+    NSMutableArray *results = [NSMutableArray array];
+    
+    if (self.userName)
+        [results addObject:[NSString stringWithFormat:@"userName: %@", self.userName]];
+    if (self.firstName)
+        [results addObject:[NSString stringWithFormat:@"firstName: %@", self.firstName]];
+    if (self.lastName)
+        [results addObject:[NSString stringWithFormat:@"lastName: %@", self.lastName]];
+    
+    return [NSString stringWithFormat:@"<User: %p; %@>", self, [results componentsJoinedByString:@"; "]];
+}
 
 @end

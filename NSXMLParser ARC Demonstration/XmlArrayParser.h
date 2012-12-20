@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ArrayParser.h
 //  NSXMLParser ARC Demonstration
 //
 //  Created by Robert Ryan on 12/20/12.
@@ -23,13 +23,24 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
-@interface ViewController : UIViewController
+@interface XmlArrayParser : NSObject
 
-@property (weak, nonatomic) IBOutlet UITextView *textView;
+@property (nonatomic, strong) NSString *rowElementName; // this is the element name that identifies a new row of data in the XML
+@property (nonatomic, strong) NSArray *attributeNames;  // this is the array of attributes we might want to retrieve for that element name
+@property (nonatomic, strong) NSArray *elementNames;    // this is the list of sub element names for which we're retrieving values
 
-- (IBAction)pressedUserParser:(id)sender;
-- (IBAction)pressedGenericParser:(id)sender;
+@property (nonatomic, strong) NSMutableArray *items;    // after parsing, this is the array of parsed items
+
+// we'll define three initializers that look like NSXmlParser's initializers
+
+- (id)initWithContentsOfURL:(NSURL *)url;
+- (id)initWithData:(NSData *)data;
+- (id)initWithStream:(NSInputStream *)stream;
+
+// and we'll define a parse method that will initiate the parse
+
+- (BOOL)parse;
 
 @end

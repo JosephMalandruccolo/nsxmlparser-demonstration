@@ -1,0 +1,17 @@
+<users>
+    <user userId="101">
+        <userName>mspeller</userName>
+        <firstName>Mike</firstName>
+        <lastName>Speller</lastName>
+    </user>
+    <user userId="102">
+        <userName>mgdan</userName>
+        <firstName>Mila</firstName>
+        <lastName>Gdan</lastName>
+    </user>
+    <user userId="103">
+        <userName>rryan</userName>
+        <firstName>Robert</firstName>
+        <lastName>Ryan</lastName>
+    </user>
+</users>

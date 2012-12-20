@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  User.h
 //  NSXMLParser ARC Demonstration
 //
 //  Created by Robert Ryan on 12/20/12.
@@ -23,13 +23,12 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
-@interface ViewController : UIViewController
+@interface User : NSObject
 
-@property (weak, nonatomic) IBOutlet UITextView *textView;
-
-- (IBAction)pressedUserParser:(id)sender;
-- (IBAction)pressedGenericParser:(id)sender;
+@property (nonatomic, strong) NSString *userName;
+@property (nonatomic, strong) NSString *firstName;
+@property (nonatomic, strong) NSString *lastName;
 
 @end
