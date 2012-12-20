@@ -1,14 +1,14 @@
-# XML Parsing Benchmark 1
+# NSXMLParser Demonstration
 
 --
 
 ## Introduction
 
-This is an iOS application, created in response to [Parsing XML data with NSXMLParser](http://wiki.cs.unh.edu/wiki/index.php/Parsing_XML_data_with_NSXMLParser). The intent of that web site was to demonstrates `NSXMLParser`.
+This is an iOS application, created in response to [Parsing XML data with NSXMLParser](http://wiki.cs.unh.edu/wiki/index.php/Parsing_XML_data_with_NSXMLParser). This project embodies two implementations, a modified version of the code included in the "Parsing XML data with NSXMLParser" web page, as well as a generic rendition which (IMHO) offers greater reuse possibilities.
 
 ### Issues
 
-Unfortunately, this code suffers from a number of issues:
+Unfortunately, this code of the "Parsing XML data with NSXMLParser" site suffers from a number of issues:
 
 - it was not using ARC;
 
@@ -20,7 +20,7 @@ Unfortunately, this code suffers from a number of issues:
 
 - the code was missing the declaration for the `currentElementValue` property;
 
-- the code had private (implementation specific) properties in the public interface; these have been moved out of the public interface and in to the private class extension;
+- the code had properties that were really implementation-specific declared in the public interface of the .h; these have been moved out of the public interface and in to the private class extension in the .m;
 
 - the `XMLParser` was designated as conforming to `NSXMLParserDelegate`
 
@@ -32,7 +32,7 @@ Unfortunately, this code suffers from a number of issues:
 
 ### Reuse
 
-Personally, on top of all of those issues, I find it frustrating that the `XMLParser` class on that web site (renamed `UsersParser` here) was coded for only the `User` XML data. So, I have written a variation of it, `XmlArrayParser`, which captures much of the functionality of the original parser code, but can work with most XML files of this structure (i.e. an array of items, for which each item has either a series of attributes or a series of sub-elements that are strings). In short, while this `XmlArrayParser` has limitations, it does everything that the `XmlParser` was doing, plus a little more, and does so in a generic fashion, so you can get some reuse from this code.
+Personally, on top of all of those issues, I find it frustrating that the `XMLParser` class on that web site (renamed `UsersParser` here) was coded for only the `User` XML data. So, I have written a variation of it, `XmlArrayParser`, which captures much of the functionality of the original parser code, but can work with most XML files of this structure (i.e. an array of items, for which each item has either a series of attributes or a series of sub-elements that are strings). In short, while this `XmlArrayParser` has limitations, it does everything that the `XmlParser` was doing, plus a little more, and does so in a generic fashion, so you can get some reuse from it.
 
 ## Classes, Protocols, and Categories
 
@@ -76,7 +76,7 @@ The purpose of this app is to parse XML data. Here is the XML data used by this 
         </user>
     </users>
 
-While you can obviously retrieve XML from any source you want, this app includes the XML in the bundle and reads it from there
+While you can obviously retrieve XML from any source you want, this app includes the XML in the bundle and reads it from there.
 
 ## References
 
